@@ -10,7 +10,8 @@ SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 
 #DEBUG = os.environ.get('DEBUG', 'False').lower() == "true"
 
-DEBUG = True
+DEBUG = False
+
 ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 #ALLOWED_HOSTS = ['158.160.74.166', '127.0.0.1', 'localhost', 'kittygramlesson.online']
 if ALLOWED_HOSTS:
