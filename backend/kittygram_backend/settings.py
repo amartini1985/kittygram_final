@@ -11,8 +11,13 @@ SECRET_KEY = os.getenv('SECRET_KEY', get_random_secret_key())
 #DEBUG = os.environ.get('DEBUG', 'False').lower() == "true"
 
 DEBUG = False
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "").split(",")
+#ALLOWED_HOSTS = os.getenv('ALLOWED_HOSTS', '').split(',')
 #ALLOWED_HOSTS = ['158.160.74.166', '127.0.0.1', 'localhost', 'kittygramlesson.online']
+ALLOWED_HOSTS = [
+    host.strip()
+    for host in os.getenv('ALLOWED_HOSTS', '').split(',')
+    if host.strip()
+]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
